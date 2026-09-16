@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import { useAudio } from '../context/AudioContext';
 import { useData } from '../context/DataContext';
 import SideGalleryCarousel from '../components/SideGalleryCarousel';
 import { galleryMoments } from '../data/gallery';
@@ -7,11 +6,8 @@ import { galleryMoments } from '../data/gallery';
 const YOUTUBE_URL = 'https://www.youtube.com/results?search_query=ice+king+ochacho';
 
 export default function HomePage() {
-  const { playTrackById } = useAudio();
-  // ✅ Real-time data from admin panel
   const { tourAvailable, shows, merchAvailable } = useData();
 
-  // Get next upcoming show if tour is active
   const nextShow = tourAvailable && shows.length > 0 ? shows[0] : null;
 
   return (
@@ -71,26 +67,16 @@ export default function HomePage() {
               </NavLink>
             </div>
 
-            {/* ✅ Real-time tour status pill */}
+            {/* Tour status pill */}
             <div className="hero-show-pill">
-              <span className={`dot ${tourAvailable ? 'dot-live' : ''}`} aria-hidden="true" />
+              <span className="dot" style={{ backgroundColor: 'var(--accent-gold)' }} aria-hidden="true" />
               <span>
                 Live Tour &amp; Bookings:{' '}
-                {tourAvailable && nextShow ? (
-                  <strong>
-                    Next: {nextShow.date} — {nextShow.city}
-                  </strong>
-                ) : tourAvailable ? (
-                  <strong>Active — Check Schedule</strong>
-                ) : (
-                  <strong>Not Available Right Now (Studio Lockdown)</strong>
-                )}
+                <strong style={{ color: 'var(--accent-gold)' }}>Not Available Right Now (Studio Lockdown)</strong>
               </span>
-              {tourAvailable && (
-                <NavLink to="/tour" style={{ marginLeft: '0.5rem', color: 'var(--accent-cyan)', fontSize: '0.75rem', fontWeight: 700 }}>
-                  View Dates →
-                </NavLink>
-              )}
+              <NavLink to="/tour" style={{ marginLeft: '0.5rem', color: 'var(--accent-cyan)', fontSize: '0.75rem', fontWeight: 700 }}>
+                Details →
+              </NavLink>
             </div>
           </div>
         </div>
@@ -111,9 +97,9 @@ export default function HomePage() {
               <div className="premium-card-img-wrap">
                 <img src="/assets/Screenshot 2026-09-15 211029.png" alt="No Competition" />
                 <div className="premium-card-overlay">
-                  <button className="btn btn-solid-cyan btn-sm" onClick={() => playTrackById('e-choke')}>
-                    ▶ Play Preview
-                  </button>
+                  <NavLink to="/music" className="btn btn-solid-cyan btn-sm">
+                    Stream on Music Page ↗
+                  </NavLink>
                 </div>
               </div>
               <div className="premium-card-body">
@@ -123,7 +109,7 @@ export default function HomePage() {
                   High-octane Afrobeat rhythm with cold lyrical delivery that sparked dance trends across North-Central Nigeria.
                 </p>
                 <div className="premium-card-actions">
-                  <NavLink to="/music" className="btn btn-ghost-dark btn-sm">All Platforms</NavLink>
+                  <NavLink to="/music" className="btn btn-ghost-dark btn-sm">Stream Platforms ↗</NavLink>
                 </div>
               </div>
             </div>
@@ -133,9 +119,9 @@ export default function HomePage() {
               <div className="premium-card-img-wrap">
                 <img src="/assets/iceking3.jpg" alt="Oh Papa artwork" />
                 <div className="premium-card-overlay">
-                  <button className="btn btn-solid-cyan btn-sm" onClick={() => playTrackById('ochacho-money-remix')}>
-                    ▶ Play Preview
-                  </button>
+                  <NavLink to="/music" className="btn btn-solid-cyan btn-sm">
+                    Stream on Music Page ↗
+                  </NavLink>
                 </div>
               </div>
               <div className="premium-card-body">
@@ -145,32 +131,30 @@ export default function HomePage() {
                   Ice King Ochacho teams up with Teni the Entertainer on an anthemic brass-driven celebration.
                 </p>
                 <div className="premium-card-actions">
-                  <NavLink to="/music" className="btn btn-ghost-dark btn-sm">All Platforms</NavLink>
+                  <NavLink to="/music" className="btn btn-ghost-dark btn-sm">Stream Platforms ↗</NavLink>
                 </div>
               </div>
             </div>
 
-            {/* ✅ Real-time Tour / Bookings card */}
+            {/* Tour / Bookings card */}
             <div className="premium-release-card reveal reveal-delay-3">
               <div className="premium-card-img-wrap">
                 <img src="/assets/images (5).jpg" alt="Live concert" />
                 <div className="premium-card-overlay">
-                  <NavLink to="/tour" className="btn btn-gold btn-sm">View Schedule</NavLink>
+                  <NavLink to="/tour" className="btn btn-gold btn-sm">Check Status</NavLink>
                 </div>
               </div>
               <div className="premium-card-body">
-                <div className="premium-card-tag" style={{ color: tourAvailable ? '#2ecc71' : 'var(--accent-gold)' }}>
-                  {tourAvailable ? '🟢 LIVE STAGES • DATES ACTIVE' : 'LIVE STAGES • NOT AVAILABLE RIGHT NOW'}
+                <div className="premium-card-tag" style={{ color: 'var(--accent-gold)' }}>
+                  LIVE STAGES • NOT AVAILABLE RIGHT NOW
                 </div>
                 <h3 className="premium-card-title">TOUR &amp; BOOKINGS</h3>
                 <p className="premium-card-desc">
-                  {tourAvailable
-                    ? `${shows.length} show${shows.length !== 1 ? 's' : ''} confirmed. Tickets and passes now available.`
-                    : 'Live tour dates and booking requests are temporarily paused during studio production. Next dates TBA.'}
+                  Live concert dates and public booking requests are currently not available right now during studio production. Next dates TBA.
                 </p>
                 <div className="premium-card-actions">
-                  <NavLink to="/tour" className={`btn btn-sm ${tourAvailable ? 'btn-solid-cyan' : 'btn-gold'}`}>
-                    {tourAvailable ? 'Get Tickets' : 'Check Status'}
+                  <NavLink to="/tour" className="btn btn-gold btn-sm">
+                    Not Available Right Now
                   </NavLink>
                   <NavLink to="/about" className="btn btn-ghost-dark btn-sm">Read Story</NavLink>
                 </div>
@@ -178,13 +162,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* ✅ Real-time merch status bar */}
-          {!merchAvailable && (
-            <div className="reveal premium-notice-bar">
-              <span>🛍️ Merch Store is currently being restocked —</span>
-              <NavLink to="/merch">Join the waitlist</NavLink>
-            </div>
-          )}
+          {/* Merch status notice */}
+          <div className="reveal premium-notice-bar" style={{ marginTop: '2.5rem' }}>
+            <span>🛍️ Official Merch Store: <strong style={{ color: 'var(--accent-gold)' }}>Not Available Right Now</strong> —</span>
+            <NavLink to="/merch">View Capsule Details &amp; Waitlist →</NavLink>
+          </div>
 
           {/* Gallery Carousel */}
           <div className="reveal">

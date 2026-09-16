@@ -65,28 +65,28 @@ export default function TourPage() {
       </div>
 
       <div className="container" style={{ paddingBottom: '4rem' }}>
-        {/* Studio Lockdown Notice (when tour is paused) */}
-        {!tourAvailable && (
-          <div
-            style={{
-              backgroundColor: 'var(--bg-surface)',
-              border: '1px solid var(--border-color)',
-              borderLeft: '4px solid var(--accent-gold)',
-              padding: '1.75rem',
-              marginBottom: '3rem',
-            }}
-          >
-            <div style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--accent-gold)', letterSpacing: '0.08em', marginBottom: '0.35rem' }}>
-              SCHEDULE NOTICE · STUDIO LOCKDOWN
-            </div>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', color: 'var(--text-primary)', marginBottom: '0.4rem' }}>
-              PUBLIC TOUR DATES CURRENTLY PAUSED
-            </h2>
-            <p className="body-copy" style={{ fontSize: '0.875rem', maxWidth: '720px', marginBottom: 0 }}>
-              Ice King Ochacho is currently locked in the studio finalizing upcoming music and visual releases. Live tour dates are paused, but promoter inquiries, corporate endorsements, and private bookings remain open via the official form below.
-            </p>
+        {/* Studio Lockdown Notice · NOT AVAILABLE RIGHT NOW */}
+        <div
+          className="reveal"
+          style={{
+            backgroundColor: 'var(--bg-surface)',
+            border: '1px solid var(--border-color)',
+            borderLeft: '4px solid var(--accent-gold)',
+            padding: '1.75rem',
+            marginBottom: '3rem',
+          }}
+        >
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '4px 12px', background: 'rgba(242,169,59,0.15)', border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-gold)' }} />
+            NOT AVAILABLE RIGHT NOW
           </div>
-        )}
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', color: 'var(--text-primary)', marginBottom: '0.4rem' }}>
+            PUBLIC TOUR DATES CURRENTLY PAUSED
+          </h2>
+          <p className="body-copy" style={{ fontSize: '0.875rem', maxWidth: '720px', marginBottom: 0 }}>
+            Ice King Ochacho live concert dates and festival appearances are not available right now due to studio recording sessions. Promoter proposals, corporate endorsements, and private booking inquiries remain open through official Ochacho Music Group management below.
+          </p>
+        </div>
 
         {/* Active Tour Shows List (when tour is available) */}
         {tourAvailable && (

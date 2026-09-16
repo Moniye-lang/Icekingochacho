@@ -6,7 +6,7 @@ const CAPSULE_ITEMS = [
     name: 'Wonder Kid Heavyweight Tour Hoodie',
     category: 'STREETWEAR CAPSULE',
     image: '/assets/merch_hoodie.jpg',
-    status: 'IN PRODUCTION · DROP TBA',
+    status: 'NOT AVAILABLE RIGHT NOW',
     description: '450 GSM French terry cotton with crystalline puff-print graphics and bespoke ice-cyan drawcords.'
   },
   {
@@ -14,7 +14,7 @@ const CAPSULE_ITEMS = [
     name: 'Otukpo Renaissance Boxy Tee',
     category: 'LIMITED APPAREL',
     image: '/assets/merch_tee.jpg',
-    status: 'IN PRODUCTION · DROP TBA',
+    status: 'NOT AVAILABLE RIGHT NOW',
     description: 'Heavyweight vintage-washed cotton featuring tour date typography and signature royal crown crest.'
   },
   {
@@ -22,7 +22,7 @@ const CAPSULE_ITEMS = [
     name: '180g Translucent Ice-Cyan Vinyl',
     category: 'PHYSICAL PRESSING',
     image: '/assets/merch_vinyl.jpg',
-    status: 'LIMITED COLLECTORS PRESSING',
+    status: 'NOT AVAILABLE RIGHT NOW',
     description: 'Mastered directly for physical audio playback on heavyweight custom-pressed ice-cyan translucent vinyl.'
   }
 ];
@@ -53,16 +53,39 @@ export default function MerchPage() {
       </div>
 
       <div className="container" style={{ paddingBottom: '4rem' }}>
+        {/* Prominent Not Available Notice */}
+        <div
+          className="reveal"
+          style={{
+            backgroundColor: 'var(--bg-surface)',
+            border: '1px solid var(--border-color)',
+            borderLeft: '4px solid var(--accent-gold)',
+            padding: '1.75rem',
+            marginBottom: '2.5rem',
+          }}
+        >
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '4px 12px', background: 'rgba(242,169,59,0.15)', border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-gold)' }} />
+            NOT AVAILABLE RIGHT NOW
+          </div>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', color: 'var(--text-primary)', marginBottom: '0.4rem' }}>
+            OFFICIAL MERCHANDISE CURRENTLY UNAVAILABLE
+          </h2>
+          <p className="body-copy" style={{ fontSize: '0.875rem', maxWidth: '720px', marginBottom: 0 }}>
+            Official Ice King Ochacho merchandise, capsule collections, and physical pressings are currently not available for purchase while next-season manufacturing and fulfillment setup are underway. Join the VIP Dispatch below to receive an alert the moment orders go live.
+          </p>
+        </div>
+
         {/* Collection Section Header */}
         <div style={{ marginBottom: '2.5rem' }}>
-          <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-cyan)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
-            COLLECTION PREVIEW
+          <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--accent-gold)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+            CAPSULE PREVIEW (CURRENTLY NOT AVAILABLE)
           </div>
           <h2 className="section-heading" style={{ fontSize: '1.85rem' }}>
             UPCOMING STREETWEAR &amp; PHYSICAL PRESSINGS
           </h2>
           <p className="body-copy" style={{ maxWidth: '680px' }}>
-            Capsule production is currently underway. Items below will be released in strictly limited numbers. Join the VIP Dispatch below for private pre-sale access.
+            All items below are not available right now. Preview the upcoming line below and subscribe for priority release notifications.
           </p>
         </div>
 

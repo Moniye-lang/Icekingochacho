@@ -1,11 +1,8 @@
-import { useAudio } from '../context/AudioContext';
 import PlatformLinks from '../components/PlatformLinks';
 
 const YOUTUBE_URL = 'https://www.youtube.com/results?search_query=ice+king+ochacho';
 
 export default function MusicPage() {
-  const { playTrackById } = useAudio();
-
   return (
     <div>
       <div className="page-hero-banner">
@@ -13,7 +10,7 @@ export default function MusicPage() {
           <div className="page-hero-sub">OFFICIAL DISCOGRAPHY &amp; VISUALS</div>
           <h1 className="page-hero-title">MUSIC &amp; VIDEOS</h1>
           <p className="body-copy" style={{ fontSize: '0.9375rem', maxWidth: '600px' }}>
-            Stream official singles on your favorite platform and watch video cuts on YouTube.
+            Stream official singles directly on Spotify, Apple Music, Audiomack, YouTube &amp; Boomplay.
           </p>
         </div>
       </div>
@@ -98,15 +95,6 @@ export default function MusicPage() {
                 <span className="linktree-track-meta">
                   Ice King Ochacho &bull; Official Single (2024)
                 </span>
-                <div style={{ marginTop: '0.5rem' }}>
-                  <button
-                    className="btn btn-solid-cyan btn-sm"
-                    style={{ padding: '0.35rem 0.75rem', fontSize: '0.75rem' }}
-                    onClick={() => playTrackById('e-choke')}
-                  >
-                    &#9654; Preview Track
-                  </button>
-                </div>
               </div>
             </div>
             <PlatformLinks trackTitle="E Choke" />
@@ -125,15 +113,6 @@ export default function MusicPage() {
                 <span className="linktree-track-meta">
                   Ice King Ochacho feat. Teni (2024)
                 </span>
-                <div style={{ marginTop: '0.5rem' }}>
-                  <button
-                    className="btn btn-solid-cyan btn-sm"
-                    style={{ padding: '0.35rem 0.75rem', fontSize: '0.75rem' }}
-                    onClick={() => playTrackById('ochacho-money-remix')}
-                  >
-                    &#9654; Preview Track
-                  </button>
-                </div>
               </div>
             </div>
             <PlatformLinks trackTitle="Ochacho Money (Remix)" />

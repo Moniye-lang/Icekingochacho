@@ -3,7 +3,6 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { useScrollReveal } from './hooks/useAnimations';
 import { DataProvider } from './context/DataContext';
 import Header from './components/Header';
-import AudioDock from './components/AudioDock';
 import MobileTabBar from './components/MobileTabBar';
 import Footer from './components/Footer';
 import ArticleModal from './components/ArticleModal';
@@ -78,9 +77,6 @@ export default function App() {
 
         {/* Site Footer */}
         <Footer />
-
-        {/* Persistent Audio Dock */}
-        <AudioDock />
 
         {/* Mobile Bottom Tab Bar */}
         <MobileTabBar />
