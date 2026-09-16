@@ -1,0 +1,52 @@
+export const galleryMoments = [
+  {
+    id: 'gal-01',
+    image: '/assets/iceking4.jpg',
+    tag: 'IDENTITY & STYLE',
+    title: 'Cold Precision: The Ice King Persona',
+    description: 'Official label campaign visual, combining royal Benue heritage with modern creative direction and disciplined studio craft.',
+  },
+  {
+    id: 'gal-02',
+    image: '/assets/iceking.jpg',
+    tag: 'CULTURE & ORIGIN',
+    title: 'The Otukpo Foundation',
+    description: 'Rooted in Otukpo, Benue State, developing his musical voice and rhythmic instincts from an early age.',
+  },
+  {
+    id: 'gal-03',
+    image: '/assets/images (5).jpg',
+    fallbackImage: '/assets/iceking5.webp',
+    tag: 'LIVE STAGES',
+    title: 'Stage Experience & Landmark Showcases',
+    description: 'Live performance and showcase appearances at major cultural gatherings and the annual Ochacho Carnival in Otukpo.',
+  },
+  {
+    id: 'gal-04',
+    image: '/assets/iceking2.jpg',
+    tag: 'SONIC ARCHITECTURE',
+    title: 'Afro-Fusion & Rhythmic Precision',
+    description: 'Exploring contemporary Afrobeat percussion, dancehall energy, and sharp melodic cadences in the studio.',
+  },
+  {
+    id: 'gal-05',
+    image: '/assets/iceking5.webp',
+    tag: 'LABEL DIRECTION',
+    title: 'Ochacho Music Group Vision',
+    description: 'Artist development and long-term creative stewardship guiding Ice King Ochacho toward national and international platforms.',
+  },
+  {
+    id: 'gal-06',
+    image: '/assets/iceking6.jpg',
+    tag: 'STUDIO SESSIONS',
+    title: 'Recording Booth Sessions',
+    description: 'Behind-the-scenes recording sessions crafting vocal arrangements for debut singles including "Choke" and "No Competition".',
+  },
+  {
+    id: 'gal-07',
+    image: '/assets/single_echoke.jpg',
+    tag: 'RELEASE STILLS',
+    title: 'Official Cover Artwork',
+    description: 'Visual identity and promotional artwork for debut catalog releases under Ochacho Music Group.',
+  },
+];
