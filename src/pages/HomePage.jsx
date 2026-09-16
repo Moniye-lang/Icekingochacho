@@ -21,7 +21,7 @@ export default function HomePage() {
         <video
           className="hero-video-bg"
           src="/assets/Screen Recording 2026-09-15 192416.mp4"
-          poster="/assets/iceking5.webp"
+          poster=""
           autoPlay
           muted
           loop
